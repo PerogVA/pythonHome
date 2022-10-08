@@ -4,8 +4,16 @@
 # x = list(map(int,input('Введите числа через пробел: ').split(0,100)))
 
 import random
-x = random.randint(0,100)
-z = []
-[z.append(i) for i in range (x + 1)]
-# for i in range (x + 1):
-print(z)
+my_f = open("result.txt", "w")
+#with open("result.txt", "w+", encoding='utf-8') as my_f:
+k = int(input("Введите число:   "))
+lst = [random.randint(0,100) for i in range(k + 1)]
+print(lst)
+x = ""
+for i in range(k + 1):
+    if i < k:
+        x += str(lst[i]) + "*x" + str(k-i)  +  " + " 
+        x += str(lst[i]) + "*x^" + str(k-i)  +  " + " 
+    else:
+        x += str(lst[i])
+print(x)
